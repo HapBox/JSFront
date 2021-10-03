@@ -104,6 +104,8 @@
 }
 .form-field input, textarea {
   outline: none;
+  font-family: Roboto, Arial, sans-serif;
+  width: 70%;
   margin: 5px;
   border: 2px solid black;
   border-radius: 12px;
