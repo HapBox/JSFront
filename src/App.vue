@@ -1,32 +1,30 @@
 <template>
   <div id="main">
-    <div id="my_card">
-      <p>Матяш Никита Дмитриевич</p>
-      <p>БСБО-06-19</p>
-      <img src="./assets/moefoto.jpg" width="100" />
-      <p>Мои умения</p>
-      <ul>
-        <li>Основы C#</li>
-        <li>Основы Python</li>
-        <li>Основы Java</li>
-        <li>Отлично готовлю</li>
-      </ul>
+    <div class="base-card">
+      <div class="card_details">
+        <div class="name">Матяш Никита Дмитриевич</div>
+        <div class="group">БСБО-06-19</div>
+        <div class="photo"><img src="./assets/moefoto.jpg" width="100" /></div>
+        <div class="text">Мои умения:</div>
+        <ul>
+          <li>Основы C#</li>
+          <li>Основы Python</li>
+          <li>Основы Java</li>
+          <li>Отлично готовлю</li>
+        </ul>
+      </div>
     </div>
-    <div id="back_form">
-      <p>Форма обратной связи</p>
+    <div class="base-card">
+      <div class="text_form">Форма обратной связи</div>
       <form>
         <div class="form-field">
-          <!-- <label for="name">Ваше имя </label> -->
           <input type="text" placeholder="Ваше имя" id="name" required />
         </div>
         <div class="form-field">
-          <!-- <label for="mail">Ваш email </label> -->
           <input type="text" placeholder="Ваш email" id="mail" required />
         </div>
         <div class="form-field">
-          <!-- <label for="text">Сопроводительное письмо</label> -->
-          <br />
-          <textarea id="text" placeholder="Сопроводительное письмо" required> </textarea>
+          <textarea id="text" placeholder="Сопроводительное письмо" required></textarea>
         </div>
         <div class="submit">
           <input type="submit" value="Отправить!" />
@@ -63,59 +61,55 @@
     display: flex;
   }
 }
+.name {
+  font-size: 1.25rem;
+}
+.group {
+  font-weight: 700;
+}
+.card_details > div {
+  margin: 8px 0;
+}
+.text_form {
+  margin: 8px;
+  font-size: 1.25rem;
+}
 .submit > input {
   border: 1px solid black;
   background: #e7e9eb;
   border-radius: 8px;
   padding: 8px 12px;
-  margin: 2%;
+  margin: 15px;
 }
 .submit > input:hover {
   border: 1px solid black;
   background: #bbbbbd;
   border-radius: 8px;
   padding: 8px 12px;
-  margin: 2%;
+  margin: 15px;
 }
 .submit > input:active {
   border: 1px solid black;
   background: #bbbbbd;
   border-radius: 8px;
   padding: 12px 16px;
-  margin: 2%;
+  margin: 15px;
 }
-#my_card {
-  display: flexbox;
-  padding: 2%;
-  margin: 1%;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+.base-card {
+  padding: 10px 20px;
+  margin: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);  
   background: turquoise;
   border-radius: 8px;
 }
-#back_form {
-  display: flexbox;
-  padding: 2%;
-  margin: 1%;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-  border-radius: 8px;
-  background: tomato;
-}
-.form-field > input {
+.form-field input, textarea {
   outline: none;
-  margin: 4px;
+  margin: 5px;
   border: 2px solid black;
   border-radius: 12px;
   padding: 4px 28px;
 }
-textarea {
-  outline: none;
-  border: 2px solid black;
-  border-radius: 12px;
-  padding: 4px 8px;
-  width: 200px;
-  height: 80px;
-}
-img {
+.photo > img {
   border-radius: 8px;
 }
 li {
