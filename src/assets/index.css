@@ -1,0 +1,57 @@
+#main {
+  display: block;
+  font-family: Roboto, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: black;
+  /* margin-top: 60px; */
+}
+@media only screen and (min-width: 700px) {
+  #info_main {
+    display: flex;
+  }
+}
+.card {
+  padding: 10px 20px;
+  margin: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  background: turquoise;
+  border-radius: 8px;
+}
+
+.form-field input,
+textarea {
+  outline: none;
+  font-family: Roboto, Arial, sans-serif;
+  width: 70%;
+  margin: 5px;
+  border: 2px solid black;
+  border-radius: 12px;
+  padding: 4px 28px;
+}
+.text_form {
+  margin: 8px;
+  font-size: 1.25rem;
+}
+.submit > input {
+  border: 1px solid black;
+  background: #e7e9eb;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin: 15px;
+}
+.submit > input:hover {
+  border: 1px solid black;
+  background: #bbbbbd;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin: 15px;
+}
+.submit > input:active {
+  border: 1px solid black;
+  background: #bbbbbd;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 15px;
+}
