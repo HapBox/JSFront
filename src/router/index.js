@@ -15,7 +15,7 @@ const routes = [
   },
   {
     path: '/info',
-    name: 'InfoPage',
+    name: 'infoPage',
     meta: {
       title: 'Информация',
       layout: "main-layout"
@@ -24,7 +24,7 @@ const routes = [
   },
   {
     path: '/login',
-    name: 'Login',
+    name: 'login',
     meta: {
       title: 'Авторизация',
       layout: "auth-layout"
@@ -33,7 +33,7 @@ const routes = [
   },
   {
     path: '/registration',
-    name: 'Registration',
+    name: 'registration',
     meta: {
       title: 'Регистрация',
       layout: "auth-layout"
@@ -47,5 +47,15 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
+//Защита роутов
+router.beforeEach((to, from, next) => {
+  const {accessToken} = localStorage;
+  if (accessToken || to.name === "login" || to.name === "registration") {
+    next()
+  } else {
+    next("/login")
+  }
+});
 
 export default router

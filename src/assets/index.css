@@ -1,3 +1,7 @@
+/* * {
+  box-sizing: border-box;
+} */
+
 #main {
   display: block;
   font-family: Roboto, Arial, sans-serif;
@@ -54,4 +58,14 @@ textarea {
   border-radius: 8px;
   padding: 12px 16px;
   margin: 15px;
+}
+
+.delete-button {
+  background-color: red;
+  border-radius: 32px;
+  /* border: 1px solid black; */
+}
+
+.done {
+  text-decoration: line-through;
 }

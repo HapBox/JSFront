@@ -31,12 +31,12 @@ export default {
   methods: {
     async onFormSubmit() {
       try {
-        const data = await doLogin(
-          this.login.trim(),
-          this.password.trim()
-        );
-        this.$router.push("/");
-        console.warn({ data });
+        const token = await doLogin(this.login.trim(), this.password.trim());
+        if (token) {
+          localStorage.accessToken = token;
+          this.$router.push("/");
+        }
+        console.warn({ token });
       } catch (error) {
         this.$root.errorMessage = error.response.data.message;
         console.error(error);
