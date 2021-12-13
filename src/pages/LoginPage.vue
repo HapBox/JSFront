@@ -1,5 +1,5 @@
 <template>
-  <form class="login-form" @submit.prevent="onFormSubmit">
+  <form class="auth-form" @submit.prevent="onFormSubmit">
     <div class="form-field">
       <label for="login">Логин</label>
       <input v-model="login" id="login" type="text" required />
@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { doLogin } from "@/netClient/dataService";
+import { doLogin } from "@/netClient/authService";
 export default {
   name: "LoginPage",
   async mounted() {},

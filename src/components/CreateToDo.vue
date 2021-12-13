@@ -1,12 +1,13 @@
 <template>
-  <section class="create-todo">
-    <input v-model="name" type="text" placeholder="Название дела" />
-    <button @click="onCreateToDoClicked">Создать</button>
-  </section>
+  <div class="form-field">
+    <label for="name">Создать дело </label>
+    <input id="name" v-model="name" type="text" placeholder="Название дела" />
+    <button  @click="onCreateToDoClicked">Создать</button>
+  </div>
 </template>
 
 <script>
-import { createToDo } from "@/netClient/dataService";
+import { createToDo } from "@/netClient/todoService";
 export default {
   name: "CreateToDo",
   data: () => ({

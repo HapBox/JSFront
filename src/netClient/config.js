@@ -1,7 +1,8 @@
 import axios from "axios";
+import router from "@/router";
 
 const netClient = axios.create({
-  baseURL: "http://localhost:3001",
+  baseURL: "http://192.168.3.5:3001",
   timeout: 10000,
 });
 
@@ -18,6 +19,17 @@ netClient.interceptors.request.use(
   },
   (error) => {
     console.error(error);
+    return Promise.reject(error);
+  }
+);
+
+netClient.interceptors.response.use(
+  (response) => {
+    return response;
+  },
+  function(error) {
+    console.log(error.response.data);
+    router.push("/login");
     return Promise.reject(error);
   }
 );

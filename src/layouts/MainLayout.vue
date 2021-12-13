@@ -19,14 +19,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.main-layout {
-  width: 100%;
-  max-width: 500px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-}
-</style>

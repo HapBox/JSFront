@@ -14,7 +14,9 @@
             :checked="todoItem.isDone"
             @input="onCheckBoxInput(todoItem.id)"
           />
-          <button class="delete-button">X</button>
+          <button class="delete-button" v-on:click="deleteTodo(todoItem.id)">
+            X
+          </button>
         </div>
       </li>
     </ul>
@@ -22,12 +24,12 @@
 </template>
 
 <script>
-import { fetchToDoList, patchToDo } from "@/netClient/dataService";
-import CreateToDo from "@/components/CreateToDo.vue"
+import { fetchToDoList, patchToDo, deleteToDo } from "@/netClient/todoService";
+import CreateToDo from "@/components/CreateToDo.vue";
 export default {
   name: "HomePage",
   components: {
-      CreateToDo,
+    CreateToDo,
   },
   async created() {
     this.fetchToDoList();
@@ -52,6 +54,14 @@ export default {
       } catch (error) {
         console.error(error);
       }
+    },
+    async deleteTodo(id) {
+        try {
+          await deleteToDo({id});
+          this.todoList = await fetchToDoList();
+        } catch (error) {
+          console.error(error);
+        }
     },
     async onCreateToDo(todo) {
       this.todoList.push(todo);

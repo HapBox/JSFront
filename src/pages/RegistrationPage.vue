@@ -1,5 +1,5 @@
 <template>
-  <form class="registartion-form" @submit.prevent="onFormSubmit">
+  <form class="auth-form" @submit.prevent="onFormSubmit">
     <div class="form-field">
       <label for="login">Логин</label>
       <input v-model="login" id="login" type="text" required />
@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { doRegister } from "@/netClient/dataService";
+import { doRegister } from "@/netClient/authService";
 export default {
   name: "RegistrationPage",
   async mounted() {},

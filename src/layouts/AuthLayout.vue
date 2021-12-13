@@ -14,14 +14,3 @@ export default {
   name: "AuthLayout",
 };
 </script>
-
-<style>
-.auth-layout {
-  width: 100%;
-  max-width: 500px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-}
-</style>
