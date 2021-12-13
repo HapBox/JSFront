@@ -22,6 +22,7 @@
 
 .page-title {
   font-size: 1.6rem;
+  margin: 10px;
 }
 
 #nav {
@@ -36,7 +37,7 @@
   color: #e7e9eb;
   text-decoration: none;
   cursor: pointer;
-  margin: 20px;
+  margin-right: 40px;
   user-select: none;
 }
 
@@ -195,4 +196,9 @@ ul {
   width: 500px;
   margin-left: auto;
   margin-right: auto;
+}
+
+body {
+  background-color: lightgreen;
+  margin: 0px;
 }
